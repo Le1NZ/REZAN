@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "167552996906",
+    "firebase_url": "https://rezan-8f84c-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "rezan-8f84c",
+    "storage_bucket": "rezan-8f84c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:167552996906:android:4521324553288b173c5553",
+        "android_client_info": {
+          "package_name": "com.example.rezan"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "167552996906-tieju3tcm7mf0va1naa8aelko3kded8f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDlsKv62BWMNvHuvD22p26XREY-91CFXPM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "167552996906-tieju3tcm7mf0va1naa8aelko3kded8f.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
