@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="16dp"
-    tools:context=".VerificationPhoneFragment">
+    tools:context=".ui.fragments.VerificationPhoneFragment">
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -61,6 +61,8 @@
         android:layout_marginTop="16dp"
         android:hint="+7..."
         android:inputType="phone"
+        android:text="+7"
+        android:maxLines="1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tvCanYouPhone" />
@@ -86,6 +88,7 @@
         android:hint="Код из СМС"
         android:inputType="numberDecimal"
         android:visibility="gone"
+        android:maxLines="1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tvCanYouCode"

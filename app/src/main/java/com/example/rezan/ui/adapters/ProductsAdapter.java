@@ -1,4 +1,4 @@
-package com.example.rezan;
+package com.example.rezan.ui.adapters;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -8,13 +8,15 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.navigation.NavOptions;
 import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
-import com.example.rezan.databinding.FragmentShopBinding;
+import com.example.rezan.data.db.Product;
+import com.example.rezan.R;
+import com.example.rezan.ui.fragments.ShopFragment;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 
@@ -32,15 +34,12 @@ public class ProductsAdapter extends FirebaseRecyclerAdapter<Product, ProductsAd
         holder.cost.setText(product.getCost() + " рублей");
         Glide.with(holder.image.getContext()).load(product.getPhoto()).into(holder.image);
 
-        holder.constraintProduct.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Bundle bundle = new Bundle();
-                bundle.putSerializable("name", product.getName());
-                bundle.putSerializable("photo", product.getPhoto());
-                bundle.putSerializable("cost", product.getCost());
-                Navigation.findNavController(ShopFragment.binding.getRoot()).navigate(R.id.action_navigation_shop_to_productFragment, bundle);
-            }
+        holder.constraintProduct.setOnClickListener(view -> {
+            Bundle bundle = new Bundle();
+            bundle.putSerializable("name", product.getName());
+            bundle.putSerializable("photo", product.getPhoto());
+            bundle.putSerializable("cost", product.getCost());
+            Navigation.findNavController(ShopFragment.binding.getRoot()).navigate(R.id.action_navigation_shop_to_productFragment, bundle);
         });
 
     }

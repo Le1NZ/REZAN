@@ -1,9 +1,15 @@
-package com.example.rezan;
+package com.example.rezan.data.db;
 
 public class News {
 
     News() {
 
+    }
+
+    public News(String head, String desc, String photo_1) {
+        this.photo_1 = photo_1;
+        this.head = head;
+        this.desc = desc;
     }
 
     private String photo_1;

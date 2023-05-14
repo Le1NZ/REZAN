@@ -1,4 +1,6 @@
-package com.example.rezan;
+package com.example.rezan.data.network;
+
+import com.example.rezan.data.db.Weather;
 
 import io.reactivex.Observable;
 import retrofit2.http.GET;

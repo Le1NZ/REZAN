@@ -1,10 +1,8 @@
-package com.example.rezan;
+package com.example.rezan.data.db;
 
 public class Product {
 
-    Product () {
-
-    }
+    Product () { }
 
     private String name;
     private Integer cost;

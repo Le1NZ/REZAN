@@ -1,4 +1,4 @@
-package com.example.rezan;
+package com.example.rezan.ui.fragments;
 
 import android.os.Bundle;
 
@@ -9,13 +9,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.rezan.R;
 import com.example.rezan.databinding.FragmentEnterNameAndPhotoBinding;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-
-import java.util.HashMap;
-import java.util.Map;
 
 public class EnterNameAndPhotoFragment extends Fragment {
 

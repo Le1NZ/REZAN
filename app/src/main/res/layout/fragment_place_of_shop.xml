@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.fragments.ProductFragment">
+    tools:context=".ui.fragments.PlaceOfShopFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/topNav"
@@ -37,69 +37,68 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-
     <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
         android:padding="16dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:nestedScrollingEnabled="false"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/topNav">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/topNav"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <LinearLayout
+            android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
             <com.google.android.material.imageview.ShapeableImageView
-                android:id="@+id/productMainImage"
+                android:id="@+id/tirazhPhoto"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:adjustViewBounds="true"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="1.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
                 app:shapeAppearanceOverlay="@style/ShapeAppearance.CircularBorder"
-                tools:src="@drawable/product_1" />
+                android:src="@drawable/tirazh" />
 
             <TextView
-                android:id="@+id/productMainName"
+                android:id="@+id/tirazhName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:textColor="?android:textColorPrimary"
                 android:textSize="32sp"
                 android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/productMainImage"
-                tools:text="Футболка" />
+                android:text="Копицентр ТИРАЖ"
+                />
 
             <TextView
-                android:id="@+id/productMainCost"
+                android:id="@+id/tirazhDesc"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:textColor="?android:textColorPrimary"
                 android:textSize="24sp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/productMainName"
-                tools:text="1000 рублей" />
-
-            <Button
-                android:id="@+id/productBuy"
+                android:text="Здесь вы можете приобрести товары, а также воспользоваться любыми
+                            полиграфическими услугами" />
+            <TextView
+                android:id="@+id/tirazhPhone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:layout_marginBottom="16dp"
-                android:text="@string/buy"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/productMainCost" />
+                android:textColor="?android:textColorPrimary"
+                android:textSize="24sp"
+                android:text="Телефон: +7 (915) 602-76-73"/>
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+            <com.example.rezan.ui.viewModels.CustomMapView
+                android:id="@+id/tirazhMapView"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="24dp"
+                android:layout_width="match_parent"
+                android:layout_height="500dp" />
 
+        </LinearLayout>
 
     </ScrollView>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

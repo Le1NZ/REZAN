@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="16dp"
-    tools:context=".RegisteredFragment">
+    tools:context=".ui.fragments.RegisteredFragment">
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -43,81 +43,94 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <TextView
-        android:id="@+id/userName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:textColor="?android:textColorPrimary"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/topNav"
-        tools:text="POKROVSKII" />
-
-    <TextView
-        android:id="@+id/userScore"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/userName"
-        tools:text="Ваш счет: " />
-
-    <Button
-        android:id="@+id/userAchievements"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:text="@string/achievements"
-        app:layout_constraintBottom_toTopOf="@id/userSources"
-        app:layout_constraintEnd_toStartOf="@id/userLogOut"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/userLogOut"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="16dp"
-        android:text="Выйти"
-        app:layout_constraintBottom_toTopOf="@id/userAboutUs"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/userAchievements" />
-
-    <Button
-        android:id="@+id/userAboutUs"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:text="@string/about_us"
-        app:layout_constraintBottom_toTopOf="@id/userHelpProject"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/userAchievements" />
-
-    <Button
-        android:id="@+id/userSources"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
-        android:text="@string/change_name"
-        app:layout_constraintBottom_toTopOf="@id/userHelpProject"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/userAboutUs"
-        app:layout_constraintTop_toBottomOf="@id/userLogOut" />
-
-    <Button
-        android:id="@+id/userHelpProject"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/profileConstraint"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/help_project"
+        android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/userSources" />
+        app:layout_constraintTop_toBottomOf="@id/topNav"
+        tools:visibility="visible">
+
+        <TextView
+            android:id="@+id/userName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:textColor="?android:textColorPrimary"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="POKROVSKII" />
+
+        <TextView
+            android:id="@+id/userScore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/userName"
+            tools:text="Ваш счет: " />
+
+        <Button
+            android:id="@+id/userAchievements"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:text="@string/achievements"
+            app:layout_constraintBottom_toTopOf="@id/userSources"
+            app:layout_constraintEnd_toStartOf="@id/userLogOut"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/userLogOut"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="16dp"
+            android:text="Выйти"
+            app:layout_constraintBottom_toTopOf="@id/userAboutUs"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/userAchievements" />
+
+        <Button
+            android:id="@+id/userAboutUs"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:text="Рейтинг"
+            app:layout_constraintBottom_toTopOf="@id/userHelpProject"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/userAchievements" />
+
+        <Button
+            android:id="@+id/userSources"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:text="@string/change_name"
+            app:layout_constraintBottom_toTopOf="@id/userHelpProject"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/userAboutUs"
+            app:layout_constraintTop_toBottomOf="@id/userLogOut" />
+
+        <Button
+            android:id="@+id/userHelpProject"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/help_project"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/userSources" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

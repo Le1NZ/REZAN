@@ -3,55 +3,67 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:minHeight="150dp"
     android:layout_height="wrap_content"
     android:layout_margin="8dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintAchievements"
         android:padding="8dp"
-        android:id="@+id/constraintProduct"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" >
+        android:layout_height="match_parent">
 
         <com.google.android.material.imageview.ShapeableImageView
-            android:id="@+id/productImage"
-            android:layout_width="wrap_content"
-            android:layout_height="130dp"
+            android:id="@+id/achievementImage"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
             android:adjustViewBounds="true"
-            android:scaleType="fitStart"
-            app:layout_constraintEnd_toStartOf="@id/productName"
+            android:scaleType="centerInside"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/achievementName"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:shapeAppearanceOverlay="@style/ShapeAppearance.CircularBorder"
-            tools:src="@drawable/product_1" />
+            tools:src="@drawable/news_test_1" />
 
         <TextView
-            android:id="@+id/productName"
+            android:id="@+id/achievementName"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="16dp"
             android:textColor="?android:textColorPrimary"
-            android:textSize="28sp"
+            android:textSize="24sp"
             android:textStyle="bold"
-            app:layout_constraintEnd_toStartOf="@id/changeToProduct"
-            app:layout_constraintStart_toEndOf="@id/productImage"
+            app:layout_constraintEnd_toStartOf="@id/changeToAchievement"
+            app:layout_constraintStart_toEndOf="@id/achievementImage"
             app:layout_constraintTop_toTopOf="parent"
-            tools:text="Shopper" />
+            tools:text="ПОСЕТИТЬ ДК Приокский" />
 
         <TextView
-            android:id="@+id/productCost"
+            android:id="@+id/achievementIsDone"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="16dp"
             android:layout_marginTop="8dp"
             android:textColor="?android:textColorPrimary"
             android:textSize="20sp"
-            app:layout_constraintStart_toEndOf="@id/productImage"
-            app:layout_constraintTop_toBottomOf="@id/productName"
-            tools:text="1000 rubles" />
+            app:layout_constraintStart_toEndOf="@id/achievementImage"
+            app:layout_constraintTop_toBottomOf="@id/achievementName"
+            tools:text="DONE" />
+
+        <TextView
+            android:id="@+id/achievementScore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="8dp"
+            android:textColor="?android:textColorPrimary"
+            android:textSize="20sp"
+            app:layout_constraintStart_toEndOf="@id/achievementImage"
+            app:layout_constraintTop_toBottomOf="@id/achievementIsDone"
+            tools:text="100 баллов" />
 
         <ImageView
-            android:id="@+id/changeToProduct"
+            android:id="@+id/changeToAchievement"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_next"
@@ -60,5 +72,6 @@
             app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
 
 </com.google.android.material.card.MaterialCardView>

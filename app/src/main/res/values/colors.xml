@@ -12,4 +12,7 @@
     <color name="grey_3">#F5F5F5</color>
     <color name="grey_4">#A9A9A9</color>
     <color name="grey_5">#474A51</color>
+    <color name="green_primary">#206c2e</color>
+    <color name="green_secondary">#526350</color>
+    <color name="green_tertiary">#526350</color>
 </resources>

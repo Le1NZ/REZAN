@@ -1,6 +1,5 @@
-package com.example.rezan;
+package com.example.rezan.ui.fragments;
 
-import android.media.audiofx.AcousticEchoCanceler;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -12,6 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
 
+import com.example.rezan.R;
 import com.example.rezan.databinding.FragmentVerificationPhoneBinding;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -27,7 +27,6 @@ import com.google.firebase.auth.PhoneAuthProvider;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-import java.util.concurrent.Executor;
 import java.util.concurrent.TimeUnit;
 
 public class VerificationPhoneFragment extends Fragment {
@@ -55,6 +54,7 @@ public class VerificationPhoneFragment extends Fragment {
             @Override
             public void onVerificationFailed(@NonNull FirebaseException e) {
                 binding.progressBar.setVisibility(View.GONE);
+                Toast.makeText(getContext(), "Ошибка", Toast.LENGTH_SHORT).show();
                 if (e instanceof FirebaseAuthInvalidCredentialsException) {
                     Log.w("MyAuth", e);
                 } else if (e instanceof FirebaseTooManyRequestsException) {
@@ -75,9 +75,10 @@ public class VerificationPhoneFragment extends Fragment {
             }
         };
 
-        binding.verifyPhone.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        binding.verifyPhone.setOnClickListener(v -> {
+            if (binding.etEnteredPhone.getText().toString().equals("")) {
+                Toast.makeText(requireContext(), "Вы не заполнили поле!", Toast.LENGTH_LONG).show();
+            } else {
                 if (!buttonStatus) {
                     binding.progressBar.setVisibility(View.VISIBLE);
                     PhoneAuthOptions options =
@@ -110,7 +111,6 @@ public class VerificationPhoneFragment extends Fragment {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
-                            FirebaseUser user = task.getResult().getUser();
 
                             final FirebaseDatabase database = FirebaseDatabase.getInstance();
                             DatabaseReference ref = database.getReference("Users").child(mAuth.getCurrentUser().getUid());

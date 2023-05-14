@@ -1,4 +1,4 @@
-package com.example.rezan;
+package com.example.rezan.ui.fragments;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
@@ -6,14 +6,11 @@ import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.EditText;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.fragment.app.DialogFragment;
 
-import com.example.rezan.databinding.AlertChangeNameBinding;
+import com.example.rezan.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;

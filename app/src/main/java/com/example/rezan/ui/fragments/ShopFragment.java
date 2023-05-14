@@ -1,23 +1,23 @@
-package com.example.rezan;
+package com.example.rezan.ui.fragments;
 
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.rezan.data.db.Product;
 import com.example.rezan.databinding.FragmentShopBinding;
+import com.example.rezan.ui.adapters.ProductsAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class ShopFragment extends Fragment {
 
-    ProductsAdapter adapter;
+    private ProductsAdapter adapter;
     static public FragmentShopBinding binding;
 
     @Override
@@ -34,19 +34,9 @@ public class ShopFragment extends Fragment {
         adapter = new ProductsAdapter(options);
         binding.shopRecycler.setAdapter(adapter);
         binding.shopRecycler.setItemAnimator(null);
+        adapter.startListening();
 
         return binding.getRoot();
     }
 
-    @Override
-    public void onStart() {
-        super.onStart();
-        adapter.startListening();
-    }
-
-    @Override
-    public void onStop() {
-        super.onStop();
-        adapter.stopListening();
-    }
 }

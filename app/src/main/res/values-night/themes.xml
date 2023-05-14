@@ -1,18 +1,32 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.REZAN" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+    <style name="Theme.REZAN" parent="Theme.MaterialComponents.Light.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/grey_4</item>
-        <item name="colorPrimaryVariant">@color/grey_3</item>
-        <item name="colorOnPrimary">@color/black</item>
+        <item name="colorPrimary">@color/green_primary</item>
+        <item name="colorPrimaryVariant">@color/grey_5</item>
+        <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/grey_4</item>
-        <item name="colorSecondaryVariant">@color/black</item>
+        <item name="colorSecondary">@color/green_secondary</item>
+        <item name="colorSecondaryVariant">@color/grey_4</item>
         <item name="colorOnSecondary">@color/black</item>
         <!-- Status bar color. -->
         <item name="android:statusBarColor">@color/grey_4</item>
         <!-- Customize your theme here. -->
-        <item name="android:textColorPrimary">@color/white</item>
-        <item name="android:panelColorBackground">@color/grey_3</item>
+        <item name="android:textColorPrimary">@color/black</item>
     </style>
+
+    <style name="ShapeAppearance.CircularBorderRight" parent="">
+        <item name="cornerSizeTopRight">16dp</item>
+        <item name="cornerSizeBottomRight">16dp</item>
+    </style>
+
+    <style name="ShapeAppearance.CircularBorderLeft" parent="">
+        <item name="cornerSizeTopLeft">16dp</item>
+        <item name="cornerSizeBottomLeft">16dp</item>
+    </style>
+
+    <style name="ShapeAppearance.CircularBorder" parent="">
+        <item name="cornerSize">16dp</item>
+    </style>
+
 </resources>
