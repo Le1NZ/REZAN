@@ -24,6 +24,19 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
+            android:id="@+id/topWeatherDeg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Тираж"
+            android:textAllCaps="true"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
             android:id="@+id/topLogo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -38,63 +51,63 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <ScrollView
-        android:padding="16dp"
-        android:nestedScrollingEnabled="false"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/topNav"
-        app:layout_constraintBottom_toBottomOf="parent"
         android:layout_width="match_parent"
-        android:layout_height="0dp">
+        android:layout_height="0dp"
+        android:nestedScrollingEnabled="false"
+        android:padding="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/topNav">
 
         <LinearLayout
-            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
             <com.google.android.material.imageview.ShapeableImageView
                 android:id="@+id/tirazhPhoto"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:adjustViewBounds="true"
-                app:shapeAppearanceOverlay="@style/ShapeAppearance.CircularBorder"
-                android:src="@drawable/tirazh" />
+                android:src="@drawable/tirazh"
+                app:shapeAppearanceOverlay="@style/ShapeAppearance.CircularBorder" />
 
             <TextView
                 android:id="@+id/tirazhName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
+                android:text="Копицентр ТИРАЖ"
                 android:textColor="?android:textColorPrimary"
                 android:textSize="32sp"
-                android:textStyle="bold"
-                android:text="Копицентр ТИРАЖ"
-                />
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/tirazhDesc"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:textColor="?android:textColorPrimary"
-                android:textSize="24sp"
                 android:text="Здесь вы можете приобрести товары, а также воспользоваться любыми
-                            полиграфическими услугами" />
+                            полиграфическими услугами"
+                android:textColor="?android:textColorPrimary"
+                android:textSize="24sp" />
+
             <TextView
                 android:id="@+id/tirazhPhone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
+                android:text="Телефон: +7 (915) 602-76-73"
                 android:textColor="?android:textColorPrimary"
-                android:textSize="24sp"
-                android:text="Телефон: +7 (915) 602-76-73"/>
+                android:textSize="24sp" />
 
             <com.example.rezan.ui.viewModels.CustomMapView
                 android:id="@+id/tirazhMapView"
-                android:layout_marginTop="16dp"
-                android:layout_marginBottom="24dp"
                 android:layout_width="match_parent"
-                android:layout_height="500dp" />
+                android:layout_height="500dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="24dp" />
 
         </LinearLayout>
 
