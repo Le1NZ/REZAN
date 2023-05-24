@@ -61,7 +61,6 @@
                 android:layout_height="wrap_content"
                 android:adjustViewBounds="true"
                 android:scaleType="fitXY"
-                android:src="@drawable/news_test_1"
                 app:shapeAppearance="@style/ShapeAppearance.CircularBorder" />
 
             <TextView

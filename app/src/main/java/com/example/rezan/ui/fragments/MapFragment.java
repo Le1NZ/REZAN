@@ -63,7 +63,7 @@ public class MapFragment extends Fragment {
 
                 IconStyle iconStyle = new IconStyle()
                         .setAnchor(new PointF(0.5f, 0.5f))
-                        .setScale(1.2f).setTappableArea(
+                        .setScale(1.5f).setTappableArea(
                                 new Rect(new PointF(-3f, -3f), new PointF(3f, 3f))
                         );
 

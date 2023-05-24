@@ -22,8 +22,7 @@
             app:layout_constraintEnd_toStartOf="@id/achievementName"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:shapeAppearanceOverlay="@style/ShapeAppearance.CircularBorder"
-            tools:src="@drawable/news_test_1" />
+            app:shapeAppearanceOverlay="@style/ShapeAppearance.CircularBorder" />
 
         <TextView
             android:id="@+id/achievementName"
