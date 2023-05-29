@@ -80,24 +80,23 @@ public class VerificationPhoneFragment extends Fragment {
                 Toast.makeText(requireContext(), "Вы не заполнили поле!", Toast.LENGTH_LONG).show();
             } else {
                 if (!buttonStatus) {
-                    binding.progressBar.setVisibility(View.VISIBLE);
-                    PhoneAuthOptions options =
-                            PhoneAuthOptions.newBuilder(mAuth)
-                                    .setPhoneNumber(binding.etEnteredPhone.getText().toString())       // Phone number to verify
-                                    .setTimeout(60L, TimeUnit.SECONDS) // Timeout and unit
-                                    .setActivity(getActivity())                 // Activity (for callback binding)
-                                    .setCallbacks(mCallbacks)          // OnVerificationStateChangedCallbacks
-                                    .build();
-                    PhoneAuthProvider.verifyPhoneNumber(options);
-                } else {
-                    String nowPhone = binding.etEnteredCode.getText().toString();
-                    if (nowPhone != "") {
-                        binding.progressBar.setVisibility(View.VISIBLE);
-                        PhoneAuthCredential credential = PhoneAuthProvider.getCredential(mVerificationId, binding.etEnteredCode.getText().toString());
-                        signInWithPhoneAuthCredential(credential);
+                    if (binding.etEnteredPhone.getText().toString().length() != 12) {
+                        Toast.makeText(requireContext(), "Неправильный формат номера :(", Toast.LENGTH_SHORT).show();
                     } else {
-                        Toast.makeText(getContext(), "Поле номера не может быть пустым", Toast.LENGTH_SHORT).show();
+                        binding.progressBar.setVisibility(View.VISIBLE);
+                        PhoneAuthOptions options =
+                                PhoneAuthOptions.newBuilder(mAuth)
+                                        .setPhoneNumber(binding.etEnteredPhone.getText().toString())       // Phone number to verify
+                                        .setTimeout(60L, TimeUnit.SECONDS) // Timeout and unit
+                                        .setActivity(getActivity())                 // Activity (for callback binding)
+                                        .setCallbacks(mCallbacks)          // OnVerificationStateChangedCallbacks
+                                        .build();
+                        PhoneAuthProvider.verifyPhoneNumber(options);
                     }
+                } else {
+                    binding.progressBar.setVisibility(View.VISIBLE);
+                    PhoneAuthCredential credential = PhoneAuthProvider.getCredential(mVerificationId, binding.etEnteredCode.getText().toString());
+                    signInWithPhoneAuthCredential(credential);
                 }
             }
         });
