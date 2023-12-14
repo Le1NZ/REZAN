@@ -28,4 +28,4 @@
 
 В качестве удаленной базы данных в проекте используется Firebase RealtimeDatabase
 
-**Презентацию данного приложения со скриншотами работы и проблематикой, а также *.apk файл есть по ссылке**: <https://drive.google.com/drive/folders/1RWuOCiS7aS8fO9SyqY4iI-SwNLjD2esK?usp=sharing>
+__Презентация данного приложения со скриншотами работы и проблематикой, а также *.apk файл есть по ссылке__: <https://drive.google.com/drive/folders/1RWuOCiS7aS8fO9SyqY4iI-SwNLjD2esK?usp=sharing>
