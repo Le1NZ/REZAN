@@ -83,6 +83,10 @@
             app:exitAnim="@anim/nav_default_exit_anim"
             app:popEnterAnim="@anim/nav_default_pop_enter_anim"
             app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+        <action
+            android:id="@+id/action_navigation_shop_to_addProductFragment"
+            app:destination="@id/addProductFragment"
+            app:popUpTo="@id/navigation_shop" />
     </fragment>
 
     <fragment
@@ -257,6 +261,11 @@
         android:name="com.example.rezan.ui.fragments.AddPostFragment"
         android:label="fragment_add_post"
         tools:layout="@layout/fragment_add_post" />
+    <fragment
+        android:id="@+id/addProductFragment"
+        android:name="com.example.rezan.AddProductFragment"
+        android:label="fragment_add_product"
+        tools:layout="@layout/fragment_add_product" />
 
 
 </navigation>
