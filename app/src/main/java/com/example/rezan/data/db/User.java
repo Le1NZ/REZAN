@@ -1,5 +1,6 @@
 package com.example.rezan.data.db;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.database.IgnoreExtraProperties;
 
 import java.util.Map;
@@ -9,6 +10,19 @@ public class User {
 
     private Integer Score;
     private String Name;
+    private Boolean Admin;
+
+    public Boolean getAdmin() {
+        return Admin;
+    }
+
+    public void setAdmin(Boolean admin) {
+        Admin = admin;
+    }
+
+    public void setScore(Integer score) {
+        Score = score;
+    }
 
     public User() {
     }

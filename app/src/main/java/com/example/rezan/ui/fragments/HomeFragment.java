@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.example.rezan.R;
@@ -29,11 +30,11 @@ public class HomeFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         binding = FragmentHomeBinding.inflate(inflater, container, false);
-
+        viewModel = new ViewModelProvider(this).get(HomeFragmentViewModel.class);
+        viewModel.isUserAdmin();
 
         if (isNetworkAvailable(requireContext())) {
 
-            viewModel = new ViewModelProvider(this).get(HomeFragmentViewModel.class);
             viewModel.onRefreshed();
             viewModel.weather.observe(getViewLifecycleOwner(), thisWeather -> {
                 binding.topWeatherDeg.setText(Math.round(thisWeather.main.temp - 273.15) + " °C");
@@ -66,10 +67,21 @@ public class HomeFragment extends Fragment {
         binding.homeRecycler.setItemAnimator(null);
         adapter.startListening();
 
+        viewModel.isUserAdmin.observe(getViewLifecycleOwner(), isAdmin -> {
+            if (isAdmin) {
+                binding.addNewPost.setVisibility(View.VISIBLE);
+                binding.progressBar.setVisibility(View.GONE);
+            }
+        });
+
+        binding.addNewPost.setOnClickListener(v -> {
+            Navigation.findNavController(binding.getRoot()).navigate(R.id.action_navigation_home_to_addPostFragment);
+        });
+
         return binding.getRoot();
     }
 
-    public boolean isNetworkAvailable(final Context context) {
+    private boolean isNetworkAvailable(final Context context) {
         final ConnectivityManager connectivityManager = ((ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE));
         return connectivityManager.getActiveNetworkInfo() != null && connectivityManager.getActiveNetworkInfo().isConnected();
     }

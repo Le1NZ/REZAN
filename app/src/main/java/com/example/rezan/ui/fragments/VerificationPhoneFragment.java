@@ -117,6 +117,7 @@ public class VerificationPhoneFragment extends Fragment {
                             if (task.getResult().getAdditionalUserInfo().isNewUser()) {
                                 ref.child("Name").setValue("Рязанец");
                                 ref.child("Score").setValue(0);
+                                ref.child("Admin").setValue(false);
                                 Navigation.findNavController(binding.getRoot()).navigate(R.id.action_verificationPhoneFragment_to_enterNameAndPhotoFragment);
                             } else {
                                 Navigation.findNavController(binding.getRoot()).navigate(R.id.action_verificationPhoneFragment_to_registeredFragment);

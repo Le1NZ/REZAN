@@ -19,25 +19,11 @@
             android:layout_marginEnd="4dp"
             android:adjustViewBounds="true"
             android:scaleType="fitXY"
-            app:layout_constraintEnd_toStartOf="@id/NewsImageSecond"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:shapeAppearanceOverlay="@style/ShapeAppearance.CircularBorderLeft"
+            app:shapeAppearanceOverlay="@style/ShapeAppearance.CircularBorder"
             tools:src="@drawable/news_test_1" />
-
-        <com.google.android.material.imageview.ShapeableImageView
-            android:id="@+id/NewsImageSecond"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_marginStart="4dp"
-            android:adjustViewBounds="true"
-            android:scaleType="fitXY"
-            app:layout_constraintBottom_toBottomOf="@id/NewsImageFirst"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/NewsImageFirst"
-            app:layout_constraintTop_toTopOf="parent"
-            app:shapeAppearanceOverlay="@style/ShapeAppearance.CircularBorderRight"
-            tools:src="@drawable/news_test_2" />
 
         <TextView
             android:id="@+id/NewsTextHeader"

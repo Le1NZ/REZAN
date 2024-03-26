@@ -15,10 +15,6 @@ public class NonRegisteredFragment extends Fragment {
 
     FragmentNonRegisteredBinding binding;
 
-    public NonRegisteredFragment() {
-    }
-
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {

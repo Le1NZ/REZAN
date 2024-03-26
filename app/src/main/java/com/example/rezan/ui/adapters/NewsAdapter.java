@@ -22,7 +22,6 @@ import com.firebase.ui.database.FirebaseRecyclerOptions;
 
 
 public class NewsAdapter extends FirebaseRecyclerAdapter<News, NewsAdapter.MyViewHolder> {
-    private ViewModelProvider viewModel;
 
     public NewsAdapter(@NonNull FirebaseRecyclerOptions<News> options) {
         super(options);
@@ -33,17 +32,13 @@ public class NewsAdapter extends FirebaseRecyclerAdapter<News, NewsAdapter.MyVie
         holder.head.setText(news.getHead());
         holder.desc.setText(news.getDesc());
         Glide.with(holder.image_1.getContext()).load(news.getPhoto_1()).into(holder.image_1);
-        Glide.with(holder.image_2.getContext()).load(news.getPhoto_2()).into(holder.image_2);
 
-        holder.constraintLayout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Bundle bundle = new Bundle();
-                bundle.putSerializable("head", news.getHead());
-                bundle.putSerializable("desc", news.getDesc());
-                bundle.putSerializable("photo_1", news.getPhoto_1());
-                Navigation.findNavController(HomeFragment.binding.getRoot()).navigate(R.id.action_navigation_home_to_newsFragment, bundle);
-            }
+        holder.constraintLayout.setOnClickListener(v -> {
+            Bundle bundle = new Bundle();
+            bundle.putSerializable("head", news.getHead());
+            bundle.putSerializable("desc", news.getDesc());
+            bundle.putSerializable("photo_1", news.getPhoto_1());
+            Navigation.findNavController(HomeFragment.binding.getRoot()).navigate(R.id.action_navigation_home_to_newsFragment, bundle);
         });
     }
 
@@ -55,14 +50,13 @@ public class NewsAdapter extends FirebaseRecyclerAdapter<News, NewsAdapter.MyVie
     }
 
     class MyViewHolder extends RecyclerView.ViewHolder {
-        ImageView image_1, image_2;
+        ImageView image_1;
         TextView head, desc;
         ConstraintLayout constraintLayout;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
             image_1 = itemView.findViewById(R.id.NewsImageFirst);
-            image_2 = itemView.findViewById(R.id.NewsImageSecond);
             head = itemView.findViewById(R.id.NewsTextHeader);
             desc = itemView.findViewById(R.id.NewsTextDesc);
             constraintLayout = itemView.findViewById(R.id.newsConstraintLayout);
