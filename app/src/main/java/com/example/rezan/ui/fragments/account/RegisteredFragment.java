@@ -1,4 +1,4 @@
-package com.example.rezan.ui.fragments;
+package com.example.rezan.ui.fragments.account;
 
 import android.os.Bundle;
 import android.util.Log;
@@ -6,18 +6,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
 
 import com.example.rezan.R;
 import com.example.rezan.data.db.User;
 import com.example.rezan.databinding.FragmentRegisteredBinding;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 

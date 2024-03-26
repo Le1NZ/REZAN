@@ -1,4 +1,4 @@
-package com.example.rezan.ui.fragments;
+package com.example.rezan.ui.fragments.registration;
 
 import android.os.Bundle;
 
@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 
 import com.example.rezan.R;
 import com.example.rezan.databinding.FragmentEnterNameAndPhotoBinding;
+import com.example.rezan.ui.fragments.account.AccountFragment;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;

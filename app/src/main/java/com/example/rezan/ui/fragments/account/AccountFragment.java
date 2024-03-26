@@ -1,4 +1,4 @@
-package com.example.rezan.ui.fragments;
+package com.example.rezan.ui.fragments.account;
 
 import android.os.Bundle;
 

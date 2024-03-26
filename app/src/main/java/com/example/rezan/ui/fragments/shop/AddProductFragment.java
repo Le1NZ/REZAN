@@ -1,4 +1,4 @@
-package com.example.rezan.ui.fragments;
+package com.example.rezan.ui.fragments.shop;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -12,24 +12,24 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.Navigation;
 
-import com.example.rezan.databinding.FragmentAddPostBinding;
-import com.example.rezan.ui.viewModels.AddPostFragmentViewModel;
+import com.example.rezan.databinding.FragmentAddProductBinding;
+import com.example.rezan.ui.viewModels.AddProductFragmentViewModel;
 
 import java.io.FileNotFoundException;
 import java.io.InputStream;
 
-public class AddPostFragment extends Fragment {
+public class AddProductFragment extends Fragment {
 
-    private FragmentAddPostBinding binding;
+    private FragmentAddProductBinding binding;
+    private AddProductFragmentViewModel viewModel;
     private final int PICK_IMAGE = 1;
-    private AddPostFragmentViewModel viewModel;
     private InputStream inputStream;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        binding = FragmentAddPostBinding.inflate(inflater, container, false);
-        viewModel = new ViewModelProvider(this).get(AddPostFragmentViewModel.class);
+        binding = FragmentAddProductBinding.inflate(inflater, container, false);
+        viewModel = new ViewModelProvider(this).get(AddProductFragmentViewModel.class);
 
         binding.btnAddPhotos.setOnClickListener(view -> {
             Intent intent = new Intent();
@@ -45,15 +45,16 @@ public class AddPostFragment extends Fragment {
 
         binding.btnAddPost.setOnClickListener(view -> {
             binding.progressBar.setVisibility(View.VISIBLE);
-            viewModel.addPost(inputStream, binding.etHeader.getText().toString(), binding.etBody.getText().toString());
+            viewModel.addPost(inputStream, binding.etHeader.getText().toString(), Integer.parseInt(binding.etBody.getText().toString()));
         });
 
-        viewModel.isAddedPost.observe(getViewLifecycleOwner(), isAdded -> {
+        viewModel.isAddedProduct.observe(getViewLifecycleOwner(), isAdded -> {
             if (isAdded) {
                 Navigation.findNavController(binding.getRoot()).popBackStack();
                 binding.progressBar.setVisibility(View.GONE);
             }
         });
+
 
         return binding.getRoot();
     }

@@ -1,4 +1,4 @@
-package com.example.rezan.ui.fragments;
+package com.example.rezan.ui.fragments.shop;
 
 import android.graphics.PointF;
 import android.os.Bundle;

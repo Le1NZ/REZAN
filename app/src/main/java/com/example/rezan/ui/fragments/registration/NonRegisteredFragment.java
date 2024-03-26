@@ -1,4 +1,4 @@
-package com.example.rezan.ui.fragments;
+package com.example.rezan.ui.fragments.registration;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;

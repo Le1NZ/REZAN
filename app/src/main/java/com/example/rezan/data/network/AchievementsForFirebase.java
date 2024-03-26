@@ -1,14 +1,10 @@
 package com.example.rezan.data.network;
 
-import android.util.Log;
-
-import com.example.rezan.ui.fragments.AccountFragment;
+import com.example.rezan.ui.fragments.account.AccountFragment;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-
-import java.util.concurrent.atomic.AtomicReference;
 
 public class AchievementsForFirebase {
 

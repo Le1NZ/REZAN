@@ -3,25 +3,16 @@ package com.example.rezan.ui;
 import android.Manifest;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.NavigationUI;
 
 import com.example.rezan.R;
 import com.example.rezan.databinding.ActivityMainBinding;
-import com.example.rezan.ui.fragments.AccountFragment;
-import com.example.rezan.ui.fragments.HomeFragment;
-import com.example.rezan.ui.fragments.MapFragment;
-import com.example.rezan.ui.fragments.ShopFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.yandex.mapkit.MapKitFactory;
 
@@ -40,13 +31,14 @@ public class MainActivity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         MapKitFactory.setApiKey(MAPKIT_API_KEY);
+        MapKitFactory.initialize(this);
 
         // For bottom navigation
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_activity_main);
         NavigationUI.setupWithNavController(binding.navView, navController);
 
         bottomNavigationView = binding.navView;
-        bottomNavigationView.setOnItemSelectedListener( item -> {
+        bottomNavigationView.setOnItemSelectedListener(item -> {
             switch (item.getItemId()) {
                 case R.id.navigation_home:
                     navController.navigate(R.id.navigation_home);
@@ -75,4 +67,15 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    protected void onStop() {
+        MapKitFactory.getInstance().onStop();
+        super.onStop();
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        MapKitFactory.getInstance().onStart();
+    }
 }

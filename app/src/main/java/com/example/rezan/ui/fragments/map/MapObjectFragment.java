@@ -1,4 +1,4 @@
-package com.example.rezan.ui.fragments;
+package com.example.rezan.ui.fragments.map;
 
 import android.os.Bundle;
 import android.util.Log;
