@@ -38,6 +38,11 @@ public class Achievement {
         this.isDone = isDone;
     }
 
+    public Achievement(Integer score, String mapObject, String name) {
+        this.score = score;
+        this.mapObject = mapObject;
+        this.name = name;
+    }
 
     public String getName() {
         return name;

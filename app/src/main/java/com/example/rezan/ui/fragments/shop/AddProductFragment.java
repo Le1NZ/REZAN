@@ -55,6 +55,9 @@ public class AddProductFragment extends Fragment {
             }
         });
 
+        binding.btnBack.setOnClickListener(v -> {
+            Navigation.findNavController(binding.getRoot()).popBackStack();
+        });
 
         return binding.getRoot();
     }

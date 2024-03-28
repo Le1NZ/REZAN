@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/navigation_home"
-        android:name="com.example.rezan.ui.fragments.HomeFragment"
+        android:name="com.example.rezan.ui.fragments.home.HomeFragment"
         android:label="@string/title_home"
         tools:layout="@layout/fragment_home" >
         <action
@@ -57,7 +57,7 @@
 
     <fragment
         android:id="@+id/navigation_map"
-        android:name="com.example.rezan.ui.fragments.MapFragment"
+        android:name="com.example.rezan.ui.fragments.map.MapFragment"
         android:label="@string/title_map"
         tools:layout="@layout/fragment_map" >
         <action
@@ -68,11 +68,14 @@
             app:popEnterAnim="@anim/nav_default_pop_enter_anim"
             app:popExitAnim="@anim/nav_default_pop_exit_anim"
             app:popUpTo="@id/navigation_map" />
+        <action
+            android:id="@+id/action_navigation_map_to_addMapObjectFragment"
+            app:destination="@id/addMapObjectFragment" />
     </fragment>
 
     <fragment
         android:id="@+id/navigation_shop"
-        android:name="com.example.rezan.ui.fragments.ShopFragment"
+        android:name="com.example.rezan.ui.fragments.shop.ShopFragment"
         android:label="@string/title_shop"
         tools:layout="@layout/fragment_shop" >
         <action
@@ -83,11 +86,14 @@
             app:exitAnim="@anim/nav_default_exit_anim"
             app:popEnterAnim="@anim/nav_default_pop_enter_anim"
             app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+        <action
+            android:id="@+id/action_navigation_shop_to_addProductFragment"
+            app:destination="@id/addProductFragment" />
     </fragment>
 
     <fragment
         android:id="@+id/navigation_account"
-        android:name="com.example.rezan.ui.fragments.AccountFragment"
+        android:name="com.example.rezan.ui.fragments.account.AccountFragment"
         android:label="@string/title_account"
         tools:layout="@layout/fragment_account" >
         <action
@@ -109,7 +115,7 @@
     </fragment>
     <fragment
         android:id="@+id/productFragment"
-        android:name="com.example.rezan.ui.fragments.ProductFragment"
+        android:name="com.example.rezan.ui.fragments.shop.ProductFragment"
         android:label="fragment_product"
         tools:layout="@layout/fragment_product" >
         <action
@@ -123,7 +129,7 @@
     </fragment>
     <fragment
         android:id="@+id/nonRegisteredFragment"
-        android:name="com.example.rezan.ui.fragments.NonRegisteredFragment"
+        android:name="com.example.rezan.ui.fragments.registration.NonRegisteredFragment"
         android:label="fragment_non_registered"
         tools:layout="@layout/fragment_non_registered" >
         <action
@@ -137,7 +143,7 @@
     </fragment>
     <fragment
         android:id="@+id/registeredFragment"
-        android:name="com.example.rezan.ui.fragments.RegisteredFragment"
+        android:name="com.example.rezan.ui.fragments.account.RegisteredFragment"
         android:label="fragment_registered"
         tools:layout="@layout/fragment_registered" >
         <action
@@ -175,7 +181,7 @@
     </fragment>
     <fragment
         android:id="@+id/verificationPhoneFragment"
-        android:name="com.example.rezan.ui.fragments.VerificationPhoneFragment"
+        android:name="com.example.rezan.ui.fragments.registration.VerificationPhoneFragment"
         android:label="fragment_verification_phone"
         tools:layout="@layout/fragment_verification_phone" >
         <action
@@ -197,7 +203,7 @@
     </fragment>
     <fragment
         android:id="@+id/enterNameAndPhotoFragment"
-        android:name="com.example.rezan.ui.fragments.EnterNameAndPhotoFragment"
+        android:name="com.example.rezan.ui.fragments.registration.EnterNameAndPhotoFragment"
         android:label="fragment_enter_name_and_photo"
         tools:layout="@layout/fragment_enter_name_and_photo" >
         <action
@@ -206,7 +212,7 @@
     </fragment>
     <fragment
         android:id="@+id/achievementsFragment"
-        android:name="com.example.rezan.ui.fragments.AchievementsFragment"
+        android:name="com.example.rezan.ui.fragments.account.AchievementsFragment"
         android:label="fragment_achievements"
         tools:layout="@layout/fragment_achievements" >
         <action
@@ -217,10 +223,14 @@
             app:exitAnim="@anim/nav_default_exit_anim"
             app:popEnterAnim="@anim/nav_default_pop_enter_anim"
             app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+        <action
+            android:id="@+id/action_achievementsFragment_to_addAchievementFragment"
+            app:destination="@id/addAchievementFragment"
+            app:popUpTo="@id/achievementsFragment" />
     </fragment>
     <fragment
         android:id="@+id/achievementFragment"
-        android:name="com.example.rezan.ui.fragments.AchievementFragment"
+        android:name="com.example.rezan.ui.fragments.account.AchievementFragment"
         android:label="fragment_achievement"
         tools:layout="@layout/fragment_achievement" >
         <action
@@ -234,29 +244,44 @@
     </fragment>
     <fragment
         android:id="@+id/newsFragment"
-        android:name="com.example.rezan.ui.fragments.NewsFragment"
+        android:name="com.example.rezan.ui.fragments.home.NewsFragment"
         android:label="fragment_news"
         tools:layout="@layout/fragment_news" />
     <fragment
         android:id="@+id/mapObjectFragment"
-        android:name="com.example.rezan.ui.fragments.MapObjectFragment"
+        android:name="com.example.rezan.ui.fragments.map.MapObjectFragment"
         android:label="fragment_map_object"
         tools:layout="@layout/fragment_map_object" />
     <fragment
         android:id="@+id/placeOfShopFragment"
-        android:name="com.example.rezan.ui.fragments.PlaceOfShopFragment"
+        android:name="com.example.rezan.ui.fragments.shop.PlaceOfShopFragment"
         android:label="fragment_place_of_shop"
         tools:layout="@layout/fragment_place_of_shop" />
     <fragment
         android:id="@+id/ratingFragment"
-        android:name="com.example.rezan.ui.fragments.RatingFragment"
+        android:name="com.example.rezan.ui.fragments.account.RatingFragment"
         android:label="fragment_rating"
         tools:layout="@layout/fragment_rating" />
     <fragment
         android:id="@+id/addPostFragment"
-        android:name="com.example.rezan.ui.fragments.AddPostFragment"
+        android:name="com.example.rezan.ui.fragments.home.AddPostFragment"
         android:label="fragment_add_post"
         tools:layout="@layout/fragment_add_post" />
+    <fragment
+        android:id="@+id/addAchievementFragment"
+        android:name="com.example.rezan.ui.fragments.account.AddAchievementFragment"
+        android:label="fragment_add_achievement"
+        tools:layout="@layout/fragment_add_achievement" />
+    <fragment
+        android:id="@+id/addProductFragment"
+        android:name="com.example.rezan.ui.fragments.shop.AddProductFragment"
+        android:label="fragment_add_product"
+        tools:layout="@layout/fragment_add_product" />
+    <fragment
+        android:id="@+id/addMapObjectFragment"
+        android:name="com.example.rezan.ui.fragments.map.AddMapObjectFragment"
+        android:label="fragment_add_map_object"
+        tools:layout="@layout/fragment_add_map_object" />
 
 
 </navigation>

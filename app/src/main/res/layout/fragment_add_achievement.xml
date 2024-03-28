@@ -4,13 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.fragments.home.AddPostFragment">
+    tools:context=".ui.fragments.account.AddAchievementFragment">
 
     <ProgressBar
         android:id="@+id/progressBar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -50,7 +49,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Новая запись"
+            android:text="Новое достижение"
             android:textAllCaps="true"
             android:textSize="20sp"
             android:textStyle="bold"
@@ -75,7 +74,7 @@
             android:id="@+id/et_header"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Введите заголовок"
+            android:hint="Введите название"
             android:maxLines="1" />
 
         <EditText
@@ -83,8 +82,15 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:hint="Введите текст новости"
-            android:minLines="3" />
+            android:hint="Введите количество баллов"
+            android:inputType="number"
+            android:minLines="1" />
+
+        <Spinner
+            android:id="@+id/spinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp" />
 
         <Button
             android:id="@+id/btn_add_photos"

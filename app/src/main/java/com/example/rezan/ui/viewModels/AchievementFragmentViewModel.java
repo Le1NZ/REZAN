@@ -10,7 +10,6 @@ import com.example.rezan.data.db.Achievement;
 
 public class AchievementFragmentViewModel extends ViewModel {
 
-
     public static MutableLiveData<Achievement> achievement = new MutableLiveData<>();
 
     public void onRefreshed(Bundle bundle) {
@@ -22,7 +21,5 @@ public class AchievementFragmentViewModel extends ViewModel {
         );
         achievement.setValue(achievementHelper);
     }
-
-    
 
 }
